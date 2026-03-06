@@ -46,27 +46,42 @@ console.log('Before everything');
   /**
    * Mobile nav toggle
    */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-  const sidebar = document.querySelector('#sidebar');
-  const overlay = document.querySelector('#overlay');
-  const en_btn = document.querySelector("#en-btn-sidebar");
-  const it_btn = document.querySelector("#it-btn-sidebar");
+const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+const sidebar = document.querySelector('#sidebar');
+const overlay = document.querySelector('#overlay');
+const sidebarClose = document.querySelector('.sidebar-close');
 
-  function mobileNavToggle() {
-    document.body.classList.toggle('mobile-nav-active');
-    sidebar.classList.toggle('sidebar-active');
-    overlay.classList.toggle('overlay-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+function openSidebar() {
+  sidebar.classList.remove('closing'); // rimuove eventuale stato di chiusura
+  overlay.classList.add('overlay-active');
+  document.body.classList.add('mobile-nav-active');
+  requestAnimationFrame(() => {
+    sidebar.classList.add('sidebar-active'); // anima apertura
+  });
+}
+
+function closeSidebar() {
+  sidebar.classList.add('closing'); // anima chiusura
+  sidebar.addEventListener('transitionend', function handler() {
+    sidebar.classList.remove('sidebar-active', 'closing'); // reset dopo chiusura
+    sidebar.removeEventListener('transitionend', handler);
+  });
+  overlay.classList.remove('overlay-active');
+  document.body.classList.remove('mobile-nav-active');
+}
+
+mobileNavToggleBtn.addEventListener('click', () => {
+  if (sidebar.classList.contains('sidebar-active')) {
+    closeSidebar();
+  } else {
+    openSidebar();
   }
-  // Event listener for the mobile nav toggle button
-  mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
+});
 
-  // Event listener for the overlay and language buttons to close the sidebar when clicked
-  overlay.addEventListener('click', () => {
-    if (document.body.classList.contains('mobile-nav-active')) {
-      mobileNavToggle();
-    }
+sidebarClose.addEventListener('click', closeSidebar);
+overlay.addEventListener('click', () => {
+  if (sidebar.classList.contains('sidebar-active')) closeSidebar();
+
 });
 
 /**

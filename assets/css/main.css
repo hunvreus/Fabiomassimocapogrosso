@@ -7,43 +7,22 @@
   --default-font: "Roboto", sans-serif;
 }
 
-/* Global Colors */
 :root {
-  /* Background Color - This color is applied to the background of the entire website as well as individual sections. */
   --background-color: #ffffff;
-
-  /* Default Color - This is the default color used for the majority of the text content. */
   --default-color: #444444;
-
-  /* Heading Color - This color is used for titles, headings and secondary elements. */
   --heading-color: #191919;
-
-  /* Accent Color - This is the main accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out. */
   --accent-color: #FF7224;
-
-  /* Contrast Color - This is a color used for text when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors. */
   --contrast-color: #ffffff;
 }
 
-/* Nav Menu Colors */
 :root {
-  /* Nav Color - This is the default color of the main navmenu links. */
   --nav-color: #ffffff;
-
-  /* Nav Hover Color - This color is applied to main navmenu links when they are hovered over. */
   --nav-hover-color: #D37162;
-
-  /* Nav Dropdown Background Color - This color is used as the background for dropdown boxes that appear when hovering over primary navigation items. */
   --nav-dropdown-background-color: #ffffff;
-
-  /* Nav Dropdown Color - This color is used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-color: #212529;
-
-  /* Nav Dropdown Hover Color - Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
   --nav-dropdown-hover-color: #D37162;
 }
 
-/* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
@@ -57,14 +36,12 @@
   overflow: hidden;
 }
 
-/* Assicurati che tutto sia azzerato */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Azzera i margini e il padding del body */
 body { 
   margin: 0;
   padding: 0;
@@ -501,7 +478,7 @@ body.scrolled .header{
 
 /* Mobile Navigation */
 @media (max-width: 1199px) {
-  .mobile-nav-toggle {
+  .Il-toggle {
     color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
@@ -519,7 +496,7 @@ body.scrolled .header{
     z-index: 9997;
   }
 
-  .navmenu ul {
+  .navmenu ul, header img {
     display: none;
   }
 
@@ -581,23 +558,10 @@ body.scrolled .header{
     overflow: hidden;
   }
 
-  .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
-    position: absolute;
-    font-size: 32px;
-    top: 15px;
-    right: 15px;
-    margin-right: 0;
-    z-index: 9999;
-  }
-
   .mobile-nav-active .navmenu {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    /*
-    background: rgba(33, 37, 41, 0.417);
-    */
     height: 50px;
     transition: 0.3s;
   }
@@ -610,8 +574,6 @@ body.scrolled .header{
   }
 
 }
-
-
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -1990,7 +1952,7 @@ section,
 
 @media(max-width:800px){
   #speakers{
-    margin-top: 180px;
+    margin-top: 50px;
   }
   .section-title {
     margin-top: 0!important;
@@ -2398,70 +2360,84 @@ section,
 
 /*============================Side bar============================*/
 
-.overlay {
+.overlay{
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  inset: 0;
+  /*
   opacity: 0;
+  */
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 999; /* Ensure overlay is below the sidebar */
+  transition: opacity .3s;
+  z-index: 999;
+  width: 100%;
 }
 
-.overlay-active {
+.overlay-active{
   opacity: 1;
   visibility: visible;
 }
 
-.sidebar {
-  /*
-  display: none;
-  */
-  padding-top: 50px;
+.sidebar{
   position: fixed;
   top: 0;
-  right: 0;
+  left: -100%;      /* fuori dallo schermo */
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, #6E310F, black);
-  color: white;
-  transform: translateX(100%); /* Start with sidebar off the screen to the right */
-  transition: transform 1.3s ease; /* Smooth transition for transform property */
-  z-index: 1000; /* Ensure overlay is below the sidebar */
-}
 
-.sidebar-active {
-  display: flex;
   padding-top: 50px;
-  transform: translateX(0); /* Slide the sidebar in */
+  transition: transform 0.4s ease;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to bottom, #6E310F, black);
+  z-index: 10000;
 }
 
+.sidebar-active{
+  left: 0;          /* entra nello schermo */
+  width: 100%;
+  transform: translateX(0);
+}
+
+.sidebar.closing {
+  transform: translateX(-100%);
+}
 
 .sidebar a{
-  color: white;
+  font-size: 30px;
+  margin-left: 20px;
 }
 
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+.sidebar .nav-item-legal a{
+  font-size: 15px!important;
+}
+
+.sidebar .nav-item-legal{
+  position: fixed;
+  bottom: 5%;
+}
+
+.sidebar a:not(.active){
+  color: white;
+  font-weight: lighter;
+}
+
+.sidebar-close{
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sidebar img{
+  width: 40px;
 }
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
-}
-
-.b-example-divider {
-  width: 100%;
-  height: 3rem;
-  border-width: 1px 0;
 }
 
 .b-example-vr {
@@ -2480,22 +2456,32 @@ section,
 }
 
 .sidebar .active{
-  background-color: var(--accent-color)!important;
+  font-weight: bold;
 }
 
-#sidebar-menu a:hover{
-  background-color:var(--accent-color)!important;
-  color: white!important;
+#sidebar-menu li:not(.active) a:hover {
+  font-weight: bold;
 }
 
 .sidebar ul{
   cursor: pointer;
 }
 
+.sidebar hr{
+  padding: 0px;
+  margin: 2px;
+  border-top: 1px solid white;
+  opacity: 1;
+}
+
+.mobile-nav-toggle{
+  cursor: pointer;
+  font-size: 32px;
+}
+
 /* Media query per orientamento landscape */
 @media(max-width:1500px) and (orientation: landscape) {
   .sidebar{
-    width: 370px;
     overflow-y: auto; /* Enable vertical scrolling */
   }
   .leng-side{
@@ -2519,7 +2505,6 @@ html, body {
 }
 
 /*=========================Repertoire=========================*/
-
 
 @media (max-width: 761px){
   td, th{
