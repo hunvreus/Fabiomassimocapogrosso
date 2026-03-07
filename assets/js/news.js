@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
       data.sort((a, b) => new Date(b.date) - new Date(a.date));
       data.slice(0, MAX_NEWS).forEach(article => {
         const card = document.createElement("article");
-        card.className = `news-card ${article.size || 'medium'}`;
+        const cardSize = (article.size && typeof article.size === 'object') ? article.size.value : article.size;
+        card.className = `news-card ${cardSize || 'medium'}`;
         
         // rende tutta la card cliccabile
         if (article.url) {
