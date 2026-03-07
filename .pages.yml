@@ -98,9 +98,10 @@ content:
         label: Dimensione card
         type: select
         options:
-          - small
-          - medium
-          - large
+          values:
+            - small
+            - medium
+            - large
         default: medium
 
 
