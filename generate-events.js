@@ -4,7 +4,6 @@ const matter = require('gray-matter');
 
 const eventsDir = path.join(__dirname, 'events');
 const outputFile = path.join(__dirname, 'events.json');
-
 const events = [];
 
 // Legge tutti i file .md nella cartella events/
@@ -13,22 +12,18 @@ fs.readdirSync(eventsDir).forEach(file => {
     const filePath = path.join(eventsDir, file);
     const content = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(content);
-
     events.push({
+      date: data.date || '',
       title: data.title || '',
-      description: data.description || '',
-      description_en: data.description_en || '',  // nuovo campo per inglese
-      pubDate: data.pubDate || '',
-      place: data.place || '',
-      url: data.url || '',
-      heroImage: data.heroImage || '',
-      tickets: data.tickets || ''
+      venue: data.venue || '',
+      performers: data.performers || '',
+      url: data.url || ''
     });
   }
 });
 
 // Ordina per data crescente
-events.sort((a, b) => new Date(a.pubDate) - new Date(b.pubDate));
+events.sort((a, b) => new Date(a.date) - new Date(b.date));
 
 // Scrive il JSON
 fs.writeFileSync(outputFile, JSON.stringify(events, null, 2));
