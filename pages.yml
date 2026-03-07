@@ -1,0 +1,88 @@
+content:
+  - name: event
+    label: Evento
+    path: events
+    filename: '{year}-{month}-{day}-{fields.title}.md'
+    type: collection
+    view:
+      fields: [heroImage, title, pubDate]
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+
+      - name: description
+        label: Descrizione
+        type: text
+
+      - name: description_en
+        label: Description (EN)
+        type: text
+
+      - name: pubDate
+        label: Data
+        type: date
+        options:
+          time: true
+          format: "dd/MM/yyyy HH:mm"
+
+      - name: place
+        label: Luogo
+        type: string
+
+      - name: url
+        label: Link GoogleMaps
+        type: string
+
+      - name: heroImage
+        label: Immagine
+        type: image
+
+      - name: tickets
+        label: Link Biglietti
+        type: string
+
+  - name: repertoire
+    label: Repertorio
+    path: repertoire
+    filename: '{year}-{fields.title}.md'
+    type: collection
+    create: true
+    view:
+      fields: [title, composer, year]
+    fields:
+      - name: title
+        label: Title
+        type: string
+
+      - name: composer
+        label: Composer
+        type: string
+
+      - name: year
+        label: Year
+        type: number
+
+      - name: link
+        label: Link (optional)
+        type: string
+
+      - name: organic_it
+        label: Organic (IT)
+        type: text
+
+      - name: organic_en
+        label: Organic (EN)
+        type: text
+
+      - name: notes_it
+        label: Notes (IT)
+        type: text
+
+      - name: notes_en
+        label: Notes (EN)
+        type: text
+
+media:
+  input: assets/eventi
+  output: /assets/eventi

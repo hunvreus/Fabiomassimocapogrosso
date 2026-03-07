@@ -45,7 +45,6 @@
 body { 
   margin: 0;
   padding: 0;
-  color: var(--default-color);
   font-family: var(--default-font);
   font-weight: 200;
   position: relative;
@@ -934,6 +933,7 @@ section,
 }
 
 .section-title h2 {
+  font-weight: bold;
   color: white!important;
   font-size: 32px;
   font-weight: 0!important;
@@ -2410,6 +2410,15 @@ section,
   font-size: 15px!important;
 }
 
+.sidebar .nav-item-legal a.active{
+  color: white;
+  cursor: auto;
+}
+
+.sidebar .nav-item-legal a:hover{
+  font-weight: bold;
+}
+
 .sidebar .nav-item-legal{
   position: fixed;
   bottom: 5%;
@@ -2460,7 +2469,14 @@ section,
 }
 
 #sidebar-menu li:not(.active) a:hover {
-  font-weight: bold;
+  font-weight:bolder;
+  color: white;
+  transition: 0.2 ease;
+}
+
+#sidebar-menu li.active a:hover {
+  color: white;
+  cursor: auto;
 }
 
 .sidebar ul{
