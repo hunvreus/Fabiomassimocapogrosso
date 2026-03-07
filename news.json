@@ -4,34 +4,39 @@
     "title": "\"Breve storia d’amore\"",
     "subtitle": "la recensione in anteprima del film, in un debutto brillante al Rome Film Fest",
     "url": "https://thesoundcheck.it/2025/11/25/breve-storia-damore-la-recensione-in-anteprima-del-film-in-un-debutto-brillante-al-rome-film-fest/",
-    "cover": "/assets/news/Immagine-WhatsApp-2025-10-16-ore-19.57.34_0afd42d4.jpg"
+    "cover": "/assets/news/Immagine-WhatsApp-2025-10-16-ore-19.57.34_0afd42d4.jpg",
+    "size": "small"
   },
   {
     "date": "2025-08-22T00:00:00.000Z",
     "title": "Fabio Massimo Capogrosso, un’epica contemporanea",
     "subtitle": "INTERVISTA Il compositore italiano racconta il suo lavoro e il passaggio dalla musica «assoluta» a quella scritta per il cinema",
     "url": "https://ilmanifesto.it/fabio-massimo-capogrosso-unepica-contemporanea",
-    "cover": "/assets/news/23pg03af01.jpg.avif"
+    "cover": "/assets/news/23pg03af01.jpg.avif",
+    "size": "small"
   },
   {
     "date": "2025-07-26T00:00:00.000Z",
     "title": "Fabio Massimo Capogrosso",
     "subtitle": "Da Marco Bellocchio a Primavera, la storia di un compositore che nel cinema ha trovato la libertà",
     "url": "https://www.comingsoon.it/cinema/news/fabio-massimo-capogrosso-da-marco-bellocchio-a-primavera-la-storia-di-un/n205317/",
-    "cover": "/assets/news/205317_ppl.jpg"
+    "cover": "/assets/news/205317_ppl.jpg",
+    "size": "large"
   },
   {
     "date": "2025-01-15T00:00:00.000Z",
-    "title": "\"Stucky\"",
+    "title": "Stucky",
     "subtitle": "La colonna sonora di Fabio Massimo Capogrosso disponibile sulle piattaforme digitali",
     "url": "https://www.raicom.rai.it/2025/01/15/stucky-la-colonna-sonora-di-fabio-massimo-capogrosso-disponibile-sulle-piattaforme-digitali/",
-    "cover": "/assets/news/Stucky-300x300.jpg"
+    "cover": "/assets/news/Stucky-300x300.jpg",
+    "size": "small"
   },
   {
     "date": "2024-11-14T00:00:00.000Z",
     "title": "La colonna sonora di \"Le Déluge\" di Fabio Massimo Capogrosso per Plaza Mayor Company",
     "subtitle": "",
     "url": "https://www.colonnesonore.net/news/novita-discografiche/10405-la-colonna-sonora-di-le-deluge-di-fabio-massimo-capogrosso-per-plaza-mayor-company.html",
-    "cover": "/assets/news/foto_fabio_massimo_capogrosso_le_deluge-1.jpg"
+    "cover": "/assets/news/foto_fabio_massimo_capogrosso_le_deluge-1.jpg",
+    "size": "medium"
   }
 ]
