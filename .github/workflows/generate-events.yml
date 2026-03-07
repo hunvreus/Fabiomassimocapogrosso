@@ -3,7 +3,7 @@ name: Aggiorna News
 on:
   push:            # si attiva su ogni push
     paths:
-      - 'news/**'  # solo se cambia qualcosa nella cartella news/
+      - 'events/**'  # solo se cambia qualcosa nella cartella news/
   workflow_dispatch:  # trigger manuale
 
 jobs:
