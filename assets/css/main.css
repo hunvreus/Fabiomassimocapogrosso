@@ -3177,10 +3177,10 @@ a.underline:hover{
   position: absolute;  /* rispetto a .event */
   text-align: end;
   right: 2%;
-  align-self: center;
+  top:50%!important;
+  bottom:50%!important;
   opacity: 0;
-  top: 50%;
-  bottom: 50%;
+  align-self: center;
   transition: opacity 0.3s ease;
   z-index: 99;
   width: 100%;
@@ -3194,6 +3194,11 @@ a.underline:hover{
     align-self: center;
     transition: opacity 0.3s ease;
     z-index: 99;
+  }
+
+  .event .mobile-info{
+  height: 100%;
+  align-items: center!important;
   }
 
 .event .info{
