@@ -5,18 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("/news.json")
     .then(res => res.json())
     .then(data => {
-      data.sort((a,b) => new Date(b.date) - new Date(a.date));
+      // ordina per data decrescente
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
       data.slice(0, MAX_NEWS).forEach(article => {
         const card = document.createElement("article");
-        card.className = "news-card medium";
+        card.className = `news-card ${article.size || 'medium'}`;
+        
+        // rende tutta la card cliccabile
+        if (article.url) {
+          card.style.cursor = "pointer";
+          card.addEventListener("click", () => {
+            window.open(article.url, "_blank"); // apre in una nuova scheda
+          });
+        }
+
         card.innerHTML = `
           <img src="${article.cover}" loading="lazy" alt="${article.title}">
           <div class="news-content">
             <h3>${article.title}</h3>
             <p>${article.subtitle}</p>
-            ${article.url ? `<a href="${article.url}" target="_blank">Leggi di più</a>` : ''}
           </div>
         `;
+
         container.appendChild(card);
       });
     })

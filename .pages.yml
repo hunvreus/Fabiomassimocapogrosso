@@ -94,6 +94,15 @@ content:
         label: Immagine di copertina
         type: image
 
+      - name: size
+        label: Dimensione card
+        type: select
+        options:
+          - small
+          - medium
+          - large
+        default: medium
+
 
 media:
   input: assets/news
