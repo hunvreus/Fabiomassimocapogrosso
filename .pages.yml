@@ -33,9 +33,9 @@ content:
         type: string
 
 
-  - name: repertoire
-    label: Repertorio
-    path: repertoire
+  - name: absolute
+    label: Musica Assoluta
+    path: absolute
     filename: '{fields.name}.md'
     type: collection
     create: true
