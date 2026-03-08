@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       years.forEach(year => {
         const yearTitle = document.createElement("div");
         yearTitle.className = "container section-title";
-        yearTitle.innerHTML = `<h2 style="margin-top:50px;">${year}</h2>`;
+        yearTitle.innerHTML = `<h2 class="event-year">${year}</h2>`;
         container.appendChild(yearTitle);
 
         pastEventsByYear[year].forEach(event => {
@@ -75,7 +75,7 @@ function createEventRow(event) {
     <div class="col-sm-2">
       <h2>${formattedDate}</h2>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-2 event-title">
       <h3>${event.title}</h3>
     </div>
     <div class="mobile-info">
