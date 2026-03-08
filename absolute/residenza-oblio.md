@@ -1,7 +1,6 @@
 ---
 name: Residenza Oblio
-instrumentation: |
-  Per violino e orchestra d’archi
-composition_type: Sinfonica
+instrumentation: For violin and string orchestra
+composition_type: Symphonic
 premiere_date: 2026-03-03
 ---
