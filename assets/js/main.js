@@ -287,31 +287,3 @@ window.addEventListener("orientationchange", updateViewportMeta);
 window.addEventListener("resize", updateViewportMeta);
 
 
-
-(function() {
-  "use strict";
-
-  // Verifica se l'utente sta usando un dispositivo mobile
-  function isMobile() {
-    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
-  }
-
-  // Funzione per aggiungere la classe 'visible' all'elemento se l'utente è su un dispositivo mobile
-  function addVisibleClassIfMobile() {
-    if (isMobile()) {
-      const element = document.getElementById('repertoire-rotate');
-      if (element) {
-        element.classList.add('visible');
-      } else {
-        console.log('Element with id "repertoire-rotate" not found');
-      }
-    }
-  }
-
-  // Esegui l'aggiunta della classe al caricamento completo del DOM
-  document.addEventListener('DOMContentLoaded', function() {
-    addVisibleClassIfMobile();
-  });
-
-})();
-

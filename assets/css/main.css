@@ -3413,7 +3413,6 @@ table tbody tr a{
   border-right: 0!important;
   border-left: 0!important;
   border-top: 0!important;
-
 }
 
 .table-head{
@@ -3488,4 +3487,32 @@ table tbody tr a{
 
 .dataTables_paginate .page-link{
   border-radius: 8px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+
+@media (max-width: 1200px){
+    .col-sm-12 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1199px) {
+    tr, td {
+        text-align: left;
+    }
+}
+
+@media (max-width: 1199px) {
+  #repertoire-rotate{
+    display: inline;
+  }
+
+  .dataTables_filter {
+    text-align: center !important;
+    display: block !important;
+    margin-top: 15px !important;
+  }
 }

@@ -5,6 +5,40 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const absolute = await fetch("absolute.json").then(r => r.json());
 
+  // Estrai i tipi unici di composizione
+  const compositionTypes = ['All', ...new Set(absolute.map(e => e.composition_type).filter(Boolean))];
+
+  // Crea i bottoni filtro
+  const filterContainer = document.createElement("div");
+  filterContainer.className = "composition-filters";
+  filterContainer.style.marginBottom = "20px";
+  filterContainer.style.display = "flex";
+  filterContainer.style.gap = "10px";
+  filterContainer.style.flexWrap = "wrap";
+  filterContainer.style.justifyContent = "center";
+
+  compositionTypes.forEach(type => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn";
+    btn.textContent = type;
+    btn.dataset.filter = type;
+    if (type === 'All') btn.classList.add('active');
+    
+    btn.style.padding = "8px 16px";
+    btn.style.border = "2px solid var(--accent-color)";
+    btn.style.borderRadius = "6px";
+    btn.style.backgroundColor = "transparent";
+    btn.style.color = "var(--accent-color)";
+    btn.style.cursor = "pointer";
+    btn.style.transition = "all 0.3s ease";
+    
+    btn.addEventListener("click", () => filterTable(type));
+    filterContainer.appendChild(btn);
+  });
+
+  // Inserisci i filtri prima della tabella
+  tableBody.parentElement.parentElement.insertBefore(filterContainer, tableBody.parentElement);
+
   function createRow(entry) {
     const premiereDate = entry.premiere_date 
       ? new Date(entry.premiere_date).toLocaleDateString('it-IT', {
@@ -15,10 +49,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       : '-';
 
     return `
-      <tr>
+      <tr data-composition-type="${entry.composition_type || ''}">
         <td class="name-cell">${entry.name}</td>
-        <td class="instrumentation-cell">${entry.instrumentation || '-'}</td>
         <td class="type-cell">${entry.composition_type || '-'}</td>
+        <td class="instrumentation-cell">${entry.instrumentation || '-'}</td>
         <td class="premiere-cell">${premiereDate}</td>
       </tr>
     `;
@@ -31,19 +65,53 @@ document.addEventListener("DOMContentLoaded", async () => {
     lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]],
     pageLength: 25,
     columnDefs: [
-      { orderable: true, targets: [0, 3] },
-      { orderable: false, targets: [1, 2] }
+      { orderable: true, targets: [0, 1, 3] },
+      { orderable: false, targets: [2] }
     ]
   });
 
-  // FIX: Sostituisci il testo Previous/Next con chevron
-  setTimeout(() => {
+  // Funzione per aggiungere chevron
+  function updateChevrons() {
     document.querySelectorAll('.paginate_button.previous').forEach(btn => {
       btn.textContent = '‹';
     });
     document.querySelectorAll('.paginate_button.next').forEach(btn => {
       btn.textContent = '›';
     });
-  }, 100);
-});
+  }
 
+  updateChevrons();
+  table.on('draw', updateChevrons);
+
+  // Funzione per filtrare la tabella
+  function filterTable(type) {
+    // Aggiorna stilo dei bottoni
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('active');
+      btn.style.backgroundColor = "transparent";
+      btn.style.color = "var(--accent-color)";
+    });
+    
+    document.querySelector(`[data-filter="${type}"]`).classList.add('active');
+    document.querySelector(`[data-filter="${type}"]`).style.backgroundColor = "var(--accent-color)";
+    document.querySelector(`[data-filter="${type}"]`).style.color = "white";
+
+    // Filtra le righe
+    if (type === 'All') {
+      table.rows().every(function() {
+        $(this.node()).show();
+      });
+    } else {
+      table.rows().every(function() {
+        const row = $(this.node());
+        if (row.attr('data-composition-type') === type) {
+          row.show();
+        } else {
+          row.hide();
+        }
+      });
+    }
+    
+    table.draw(false);
+  }
+});

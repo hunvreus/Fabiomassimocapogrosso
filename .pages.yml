@@ -52,8 +52,13 @@ content:
 
       - name: composition_type
         label: Tipo di composizione
-        type: string
-
+        type: select
+        options:
+          - Symphonic
+          - Chamber
+          - Theatre
+          - Movie
+          
       - name: premiere_date
         label: Data prima esecuzione
         type: date
