@@ -22,5 +22,11 @@
     "instrumentation": "Orchestra",
     "composition_type": "Sinfonica",
     "premiere_date": "2020-03-12T00:00:00.000Z"
+  },
+  {
+    "name": "Città Nascoste",
+    "instrumentation": "Orchestra",
+    "composition_type": "Symphonic",
+    "premiere_date": "2019-03-19T00:00:00.000Z"
   }
 ]
