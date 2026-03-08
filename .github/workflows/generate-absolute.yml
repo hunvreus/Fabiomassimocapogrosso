@@ -24,13 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install gray-matter
 
-      - name: Generate news.json
-        run: node generate-news.js
+      - name: Generate absolute.json
+        run: node generate-absolute.js
 
       - name: Commit & Push changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add news.json
-          git diff --cached --quiet || git commit -m "Aggiornamento automatico news"
+          git add absolute.json
+          git diff --cached --quiet || git commit -m "Aggiornamento automatico absolute"
           git push https://erpiumino:${{ secrets.PAT }}@github.com/erpiumino/Fabiomassimocapogrosso.git HEAD:main
