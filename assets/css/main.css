@@ -2520,110 +2520,6 @@ html, body {
   overscroll-behavior: none; /* Disabilita lo scorrimento elastico globale */
 }
 
-/*=========================Repertoire=========================*/
-
-@media (max-width: 761px){
-  td, th{
-    padding: 2px;
-    font-size: 14px;
-  }
-
-  table{
-    max-width: 1650px!important;
-  }
-}
-
-.details i{
-  font-style: normal;
-}
-
-.team-singole{
-  margin-bottom: 20px;
-}
-
-.event-text{
-  margin-bottom: 20px!important;
-}
-
-table tbody tr a{
-  color: var(--accent-color)!important;
-}
-
-#sortTable tbody tr:nth-child(even){
-  color: red!important;
-  max-width: 0%;
-}
-
-.dataTable{
-  width: 100%;
-}
-
-.dataTable tr th{
-  font-weight: 500!important;
-  background-color: var(--heading-color)!important;
-  color: white;
-}
-
-.dataTable td, .dataTable td i{
-    color: white!important;
-    background-color: var(--heading-color);
-    font-style: normal!important;
-}
-
-.dataTables_wrapper .dataTable tbody tr:nth-child(even) {
-  background-color: #f2f2f2 !important;
-}
-
-.dataTable tbody tr:nth-child(even){
-  color: red!important;
-}
-
-
-.dataTables_filter input, .dataTables_filter input:focus {
-  /* Aggiungi qui i tuoi stili personalizzati */
-  background-color: var(--default-color);
-  color: white;
-}
-
-/* Stili per le informazioni di visualizzazione */
-.dataTables_info {
-  /* Aggiungi qui i tuoi stili personalizzati */
-  color: #888;
-  font-style: italic;
-  margin-top: 8px;
-}
-
-/* Stili per il menu a discesa "Show n entries" */
-.dataTables_length select, .dataTables_length select:focus {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: var(--default-color);
-  color: white;
-}
-
-.page-link{
-  background-color: var(--default-color)!important;
-  color: white!important;
-}
-
-.page-link:hover{
-  background-color: var(--accent-color)!important;
-  border-color: var(--accent-color)!important;
-}
-
-.active .page-link{
-  border-color: var(--accent-color)!important;
-  background-color: var(--accent-color)!important;
-} 
-
-#repertoire-rotate{
-  display: none;
-}
-
-#repertoire-rotate.visible{
-  display: inline;
-}
-
 /*============================Responsive and other stuff============================*/
 
 @media (max-width: 600px){
@@ -3413,4 +3309,183 @@ a.underline:hover{
     width:100%;
     text-align:center;
   }
+}
+
+/*=========================Asbolute Music=========================*/
+
+
+@media (max-width: 761px){
+  td, th{
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  table{
+    max-width: 1650px!important;
+  }
+}
+
+table tbody tr a{
+  color: var(--accent-color)!important;
+}
+
+.dataTable{
+  width: 100%!important;
+}
+
+.dataTable tr th{
+  font-weight: 500!important;
+
+  color: white!important;
+}
+
+.dataTable td, .dataTable td i{
+    color: white!important;
+
+    font-style: normal!important;
+}
+
+.dataTables_filter input, .dataTables_filter input:focus {
+  /* Aggiungi qui i tuoi stili personalizzati */
+  background-color: var(--default-color)!important;
+  color: white!important;
+}
+
+/* Stili per le informazioni di visualizzazione */
+.dataTables_info {
+  /* Aggiungi qui i tuoi stili personalizzati */
+  color: #888;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Stili per il menu a discesa "Show n entries" */
+.dataTables_length select, .dataTables_length select:focus {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: var(--default-color);
+  color: white;
+}
+
+.page-link{
+  background-color: var(--default-color)!important;
+  color: white!important;
+}
+
+.page-link:hover{
+  background-color: var(--accent-color)!important;
+  border-color: var(--accent-color)!important;
+}
+
+.active .page-link{
+  border-color: var(--accent-color)!important;
+  background-color: var(--accent-color)!important;
+} 
+
+#repertoire-rotate{
+  display: none;
+}
+
+#repertoire-rotate.visible{
+  display: inline;
+}
+
+.table{
+  --bs-table-bg: trasparent!important;
+  --bs-table-striped-bg: trasparent!important;
+  --bs-table-color: white!important;
+  --bs-table-striped-color: white!important;
+  border: solid 0px!important;
+}
+
+.table-head tr th, .table-head tr, .table-head tbody tr td{
+  border: none!important;
+  padding-top: 20px!important;
+  padding-bottom: 20px!important;
+}
+
+.table-bordered>:not(caption)>*>* {
+    border-width: 0!important;
+}
+
+.table-bordered>:not(caption)>*{
+  border-width: var(--bs-border-width)!important;
+  border-right: 0!important;
+  border-left: 0!important;
+  border-top: 0!important;
+
+}
+
+.table-head{
+  background-color: var(--accent-color)!important;
+}
+
+.table-head tr th:nth-child(1), td:nth-child(1){
+  padding-left: 40px!important;
+}
+
+#sortTable td {
+  padding-top: 15px!important;
+  padding-bottom: 15px!important;
+}
+
+/* DataTables Pagination Styling */
+.dataTables_wrapper .dataTables_paginate {
+  text-align: center !important;
+  padding: 20px 0 !important;
+  margin: 0 !important;
+}
+
+.dataTables_paginate {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: end !important;
+  gap: 10px !important;
+}
+
+.dataTables_paginate .paginate_button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 10px !important;
+  border: none !important;
+  background-color: transparent !important;
+  color: white !important;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+  font-size: 16px !important;
+  height: 32px !important;
+  line-height: 1 !important;
+  min-width: 32px !important;
+}
+
+.dataTables_paginate .paginate_button:hover:not(.disabled) {
+  color: var(--accent-color) !important;
+}
+
+/* Numeri pagina */
+.dataTables_paginate .paginate_button:not(.previous):not(.next) {
+  min-width: 32px !important;
+  width: 32px !important;
+}
+
+/* Pagina selezionata */
+.dataTables_paginate .paginate_button.current {
+  border: 2px solid white !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  color: white !important;
+  font-weight: bold !important;
+  min-width: 32px !important;
+  width: 32px !important;
+}
+
+/* Pulsanti disabilitati */
+.dataTables_paginate .paginate_button.disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.dataTables_paginate .page-link{
+  border-radius: 8px;
 }

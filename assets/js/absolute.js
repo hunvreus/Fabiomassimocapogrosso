@@ -1,12 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  if (!window.location.pathname.endsWith("absolute.html")) return;
+  const tableBody = document.querySelector("#repertoire-body");
+  
+  if (!tableBody) return;
 
-  const tableBody = document.querySelector("#absoluteTable tbody");
-
-  // 1. Carico JSON
   const absolute = await fetch("absolute.json").then(r => r.json());
 
-  // 2. Funzione per creare righe della tabella
   function createRow(entry) {
     const premiereDate = entry.premiere_date 
       ? new Date(entry.premiere_date).toLocaleDateString('it-IT', {
@@ -19,24 +17,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     return `
       <tr>
         <td class="name-cell">${entry.name}</td>
-        <td class="type-cell">${entry.composition_type || '-'}</td>
         <td class="instrumentation-cell">${entry.instrumentation || '-'}</td>
+        <td class="type-cell">${entry.composition_type || '-'}</td>
         <td class="premiere-cell">${premiereDate}</td>
       </tr>
     `;
   }
 
-  // 3. Popola la tabella
   tableBody.innerHTML = absolute.map(createRow).join("");
 
-  // 4. Inizializza DataTable
-  const table = $('#absoluteTable').DataTable({
+  const table = $('#sortTable').DataTable({
     language: window.currentTexts || {},
     lengthMenu: [[25, 50, 100, 200], [25, 50, 100, 200]],
     pageLength: 25,
     columnDefs: [
-      { orderable: true, targets: [0, 1, 3] },
-      { orderable: false, targets: [2] }
+      { orderable: true, targets: [0, 3] },
+      { orderable: false, targets: [1, 2] }
     ]
   });
+
+  // FIX: Sostituisci il testo Previous/Next con chevron
+  setTimeout(() => {
+    document.querySelectorAll('.paginate_button.previous').forEach(btn => {
+      btn.textContent = '‹';
+    });
+    document.querySelectorAll('.paginate_button.next').forEach(btn => {
+      btn.textContent = '›';
+    });
+  }, 100);
 });
+
