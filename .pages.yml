@@ -54,10 +54,12 @@ content:
         label: Tipo di composizione
         type: select
         options:
-          - Symphonic
-          - Chamber
-          - Theatre
-          - Movie
+          values:
+            - Symphonic
+            - Chamber
+            - Theatre
+            - Movie
+        default: Symphonic
           
       - name: premiere_date
         label: Data prima esecuzione
