@@ -111,6 +111,43 @@ content:
             - large
         default: medium
 
+  - name: filmography
+    label: Filmografia
+    path: filmography
+    filename: '{fields.title}.md'
+    type: collection
+    create: true
+    view:
+      fields: [title, director, year]
+    fields:
+      - name: title
+        label: Titolo
+        type: string
+
+      - name: director
+        label: Regista
+        type: string
+
+      - name: year
+        label: Anno
+        type: number
+
+      - name: poster
+        label: Poster / Immagine
+        type: image
+
+      - name: synopsis
+        label: Sinossi
+        type: text
+
+      - name: trailer_url
+        label: Link trailer YouTube
+        type: string
+
+      - name: spotify_key
+        label: Key / Link Spotify
+        type: string
+
 
 media:
   input: assets/news

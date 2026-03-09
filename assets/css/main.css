@@ -3531,3 +3531,27 @@ table tbody tr a{
     display: none !important;
   }
 }
+
+/*=========================Filmography=========================*/
+
+.film-box{
+  background-color: green;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.film-box h2, .film-box h4, .film-box p{
+  color: white;
+  margin: 0;
+}
+
+.film-box h2 {
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.film-box h4{
+  font-weight: 1;
+  font-size: 20px;
+}
