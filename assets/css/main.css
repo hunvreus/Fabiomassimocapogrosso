@@ -3536,7 +3536,6 @@ table tbody tr a{
 
 .film-box {
   cursor: pointer;
-  background-color: green;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -3544,6 +3543,7 @@ table tbody tr a{
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
+  margin-bottom: 50px;
 }
 
 .film-box::before {
