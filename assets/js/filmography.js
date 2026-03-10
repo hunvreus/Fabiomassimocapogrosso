@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <hr>
           <li class="nav-item"><a href="press.html">Press</a></li>
           <hr>
-          <li class="nav-item"><a href="contacts.html">Contacts</a></li>
+          <li class="nav-item"><a href="contacts.html">Contact</a></li>
         </ul>
         <hr>
       </div>
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <li><a href="events.html">Absolute Music</a></li>
               <li><a href="contacts.html">Events</a></li>
               <li><a href="contacts.html">Press</a></li>
-              <li><a href="contacts.html">Contacts</a></li>
+              <li><a href="contacts.html">Contact</a></li>
             </ul>
           </div>
 

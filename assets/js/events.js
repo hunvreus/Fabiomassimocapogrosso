@@ -193,9 +193,7 @@ function createEventRow(event) {
           <a href="${event.url}" target="_blank" class="info">
             Info<i class="fa-solid fa-circle-arrow-right event-arrow"></i>
           </a>
-        ` : `
-          <span class="info">Info<i class="fa-solid fa-circle-arrow-right event-arrow"></i></span>
-        `}
+        ` : ''}
       </div>
     </div>
   `;

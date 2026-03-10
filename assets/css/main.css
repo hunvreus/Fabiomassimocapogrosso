@@ -1677,7 +1677,7 @@ section,
 .contact .php-email-form input[type=text]::placeholder,
 .contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, white, transparent 80%);
 }
 
 .contact .php-email-form button[type=submit] {
@@ -3131,7 +3131,7 @@ a.underline:hover{
 
 @media (max-width:1200px){
 
-  #speakers .row{
+  #speakers .row:not(.row-form){
     width: 100%;
   }
 
@@ -3707,6 +3707,11 @@ table tbody tr a{
   }
   .film-col{
     margin-bottom: 20px!important;
+  }
+  .container-contact, .row-form{
+    text-align: center;
+    align-items: center;
+    align-content: center;
   }
 }
 
