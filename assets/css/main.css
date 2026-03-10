@@ -3596,7 +3596,6 @@ table tbody tr a{
 }
 
 .load-more-btn {
-  transform: translateX(50px);
   margin-top: 40px;
   margin-bottom: 0;
   padding: 12px 20px;
@@ -3610,10 +3609,9 @@ table tbody tr a{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 0px;
+  width: 100%;
+  text-align: center;
 }
 
 .load-more-btn i {
@@ -3622,15 +3620,26 @@ table tbody tr a{
 }
 
 .load-more-btn:hover i {
-  transform: translateX(-58px);
+  transform: translateX(-8px);
 }
 
 .load-more-text {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .load-more-btn:hover .load-more-text {
   opacity: 1;
-  transform: translateX(-58px);
+}
+
+@media (max-width: 768px) {
+  .load-more-text {
+    opacity: 1;
+  }
+  .load-more-btn:hover i {
+  transform: none;
+}
+.load-more-btn {
+  gap: 10px
+};
 }

@@ -55,7 +55,7 @@ function addLoadMoreButton() {
   
   loadMoreBtn.innerHTML = `
     <i class="fa-solid fa-chevron-down"></i>
-    <span class="load-more-text">Load More</span>
+    <span class="load-more-text">More</span>
   `;
 
   loadMoreBtn.addEventListener("click", () => {
