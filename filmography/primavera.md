@@ -15,5 +15,9 @@ synopsis: "Venezia, 1716. Cecilia è una giovane trovatella ospite del Pio
   promessa in sposa al conte di Sanfermo, con cui si mariterà non appena egli
   sarà tornato dalla guerra contro i Turchi."
 trailer_url: https://www.youtube.com/watch?v=Ny19a7DnduQ
-spotify_key: a
+spotify_key: <iframe data-testid="embed-iframe" style="border-radius:12px"
+  src="https://open.spotify.com/embed/album/0uoeSJGmFBBN4lZobXizD0?utm_source=generator&theme=0"
+  width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay;
+  clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"></iframe>
 ---
