@@ -10,5 +10,9 @@ synopsis: >
   malato e in fin di vita, la domestica cristiana Anna Morisi gli somministra in
   segreto il battesimo, per paura che, morendo, vada a finire nel limbo.
 trailer_url: https://www.youtube.com/watch?v=plbm-8m8ax8
-spotify_key: a
+spotify_key: <iframe data-testid="embed-iframe" style="border-radius:12px"
+  src="https://open.spotify.com/embed/album/1aBO7ngxXJXOrYPkzvYwcB?utm_source=generator&theme=0"
+  width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay;
+  clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"></iframe>
 ---
