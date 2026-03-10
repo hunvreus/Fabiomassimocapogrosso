@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("about-container");
-  const itemsPerPage = 8;
+  const itemsPerPage = 4;
   let allFilms = [];
   let currentIndex = 0;
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     loadMoreBtn.innerHTML = `
       <i class="fa-solid fa-chevron-down"></i>
-      <span class="load-more-text">Load More</span>
+      <span class="load-more-text">More</span>
     `;
 
     loadMoreBtn.addEventListener("click", () => {
@@ -81,17 +81,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getSpotifyId(url) {
     if (!url) return null;
-    const regex = /spotify\.com\/playlist\/([a-zA-Z0-9]+)/;
+    // Estrae l'ID sia da playlist che da album
+    const regex = /spotify\.com\/(playlist|album)\/([a-zA-Z0-9]+)/;
+    const match = url.match(regex);
+    return match ? match[2] : null;
+  }
+
+  function getSpotifyType(url) {
+    if (!url) return null;
+    // Ritorna se è 'playlist' o 'album'
+    const regex = /spotify\.com\/(playlist|album)\/([a-zA-Z0-9]+)/;
     const match = url.match(regex);
     return match ? match[1] : null;
   }
 
   // FUNZIONE PER APRIRE LA PAGINA DEL FILM
   function openFilmPage(film) {
-    const youtubeId = getYoutubeId(film.youtubeUrl);
+    const youtubeId = getYoutubeId(film.trailer_url);
     const spotifyId = getSpotifyId(film.spotifyUrl);
 
     const filmPage = `
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
     <!-- Elemento di ancoraggio per l'header -->
     <header id="header" class="header fixed-top">
       <div class="branding d-flex align-items-center" id="desktop-menu">
@@ -156,8 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container">
           <div class="container" data-aos="fade-up" id="film-container">
             <div class="row justify-content-between">
-              <div class="col-sm-5" data-aos="fade-up" data-aos-delay="200" style="margin-right: 100px;">
-                <h2>${film.title}</h2>
+
+              <!-- PULSANTE BACK -->
+              <div class="mt-5 mb-5 film-back">
+                <a href='filmography.html' style="color:white;"><i class="fa-solid fa-chevron-left"></i>Back</a>
+              </div>
+              
+              <div class="col-sm-5" data-aos="fade-up" data-aos-delay="200" style=" margin-bottom:100px;">
+                <h2 style="color:white;" class="film-text-h2">${film.title}</h2>
                 <p class="fst" style="font-weight: 10;">
                   <strong>Director:</strong> ${film.director}<br><br>
                   <strong>Year:</strong> ${film.year}<br><br>
@@ -165,17 +184,17 @@ document.addEventListener("DOMContentLoaded", () => {
                   ${film.synopsis}
                 </p>
               </div>
-              <div class="col-sm-5" data-aos="fade-up" data-aos-delay="200">
-                <img loading="lazy" class="about-img" src="${film.poster}" alt="${film.title}">
+              <div class="col-sm-5" data-aos="fade-up" data-aos-delay="200" style="margin-top:auto; margin-bottom:auto;">
+                <img loading="lazy" class="about-img film-img" src="${film.poster}" alt="${film.title}">
               </div>
             </div>
           </div>
 
           <!-- TRAILER YOUTUBE -->
           ${youtubeId ? `
-          <div class="container mt-5">
-            <h3>Trailer</h3>
-            <div class="ratio ratio-16x9">
+          <div class="container mt-5" style="margin-bottom:100px;">
+                <h2 style="color:white;">Trailer</h2>
+            <div class="ratio ratio-16x9 yt">
               <iframe src="https://www.youtube.com/embed/${youtubeId}" 
                 title="YouTube video player" 
                 allowfullscreen="" 
@@ -187,27 +206,12 @@ document.addEventListener("DOMContentLoaded", () => {
           ` : ''}
 
           <!-- SOUNDTRACK SPOTIFY -->
-          ${spotifyId ? `
-          <div class="container mt-5">
-            <h3>Soundtrack</h3>
-            <iframe style="border-radius:12px" 
-              src="https://open.spotify.com/embed/playlist/${spotifyId}?utm_source=generator" 
-              width="100%" 
-              height="680" 
-              frameBorder="0" 
-              allowfullscreen="" 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy">
-            </iframe>
+          ${film.spotify_key ? `
+          <div class="container mt-5" style="margin-bottom:100px;">
+            <h2 style="color:white;">Soundtrack</h2>
+            ${film.spotify_key}
           </div>
           ` : ''}
-
-          <!-- PULSANTE BACK -->
-          <div class="text-center mt-5 mb-5">
-            <button class="btn btn-light" onclick="history.back()">
-              <i class="fa-solid fa-chevron-left"></i> Back
-            </button>
-          </div>
         </div>
       </section>
     </main>
@@ -267,45 +271,52 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   }
 
-  // FUNZIONE PER INIZIALIZZARE GLI EVENT LISTENER
-  function initializeNavigation() {
-    const mobileNavToggle = document.getElementById("mobile-nav-toggle");
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-    const sidebarClose = document.querySelector(".sidebar-close");
+function initializeNavigation() {
+  console.log("Inizializzando navigation...");
+  
+  const mobileNavToggle = document.getElementById("mobile-nav-toggle");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const sidebarClose = document.querySelector(".sidebar-close");
 
-    // Toggle mobile nav
-    if (mobileNavToggle) {
-      mobileNavToggle.addEventListener("click", () => {
-        sidebar.classList.add("active");
-        overlay.classList.add("active");
-      });
-    }
+  console.log("mobileNavToggle:", mobileNavToggle);
+  console.log("sidebar:", sidebar);
+  console.log("sidebarClose:", sidebarClose);
 
-    // Chiudi sidebar
-    if (sidebarClose) {
-      sidebarClose.addEventListener("click", () => {
-        sidebar.classList.remove("active");
-        overlay.classList.remove("active");
-      });
-    }
-
-    if (overlay) {
-      overlay.addEventListener("click", () => {
-        sidebar.classList.remove("active");
-        overlay.classList.remove("active");
-      });
-    }
-
-    // Scroll header effect
-    window.addEventListener("scroll", () => {
-      const header = document.getElementById("header");
-      if (window.scrollY > 100) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+  // Toggle mobile nav
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener("click", () => {
+      console.log("Toggle cliccato");
+      sidebar.classList.add("sidebar-active"); // Cambiato da "active" a "sidebar-active"
+      overlay.classList.add("overlay-active"); // Cambiato da "active" a "overlay-active"
     });
   }
 
+  // Chiudi sidebar
+  if (sidebarClose) {
+    sidebarClose.addEventListener("click", () => {
+      console.log("Close cliccato");
+      sidebar.classList.remove("sidebar-active");
+      overlay.classList.remove("overlay-active");
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      console.log("Overlay cliccato");
+      sidebar.classList.remove("sidebar-active");
+      overlay.classList.remove("overlay-active");
+    });
+  }
+
+  // Scroll header effect
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (header && window.scrollY > 100) {
+      header.classList.add("scrolled");
+    } else if (header) {
+      header.classList.remove("scrolled");
+    }
+  });
+}
 }); // CHIUSURA DELL'EVENT LISTENER

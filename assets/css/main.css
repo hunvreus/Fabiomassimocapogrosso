@@ -3643,3 +3643,77 @@ table tbody tr a{
   gap: 10px
 };
 }
+
+.yt iframe{
+  border-radius: 50px;
+}
+
+@media (max-width:1200px) {
+  .film-text-h2{
+    font-size: 40px!important;
+  }
+
+  .row{
+    margin: 0;
+  }
+
+  #speakers .container{
+    padding: 0;
+  }
+
+  .film-img{
+    display: none;
+  }
+  .yt iframe{
+  border-radius: 0px;
+  }
+
+  .film-box h2,
+  .film-box h4,
+  .film-box p, .film-box::before{
+    opacity: 1;
+  }
+
+  .film-box h2 {
+    font-size: 30px;
+  }
+
+  .film-box h4 {
+    font-size: 15px;
+  }
+
+  .film-box p {
+    font-size: 12px;
+  }
+
+  .film-box{
+    margin-bottom:0;
+  }
+
+  .container-film{
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
+}
+}
+
+@media (max-width:575px) {
+
+  .film-box h2 {
+    font-size: 30px!important;
+  }
+
+  .film-box h4 {
+    font-size: 15px!important;
+  }
+
+  .film-box p {
+    font-size: 12px!important;
+  }
+}
+
+@media (max-width:450px) {
+  .container-film{
+    width: 100%!important;
+  }
+}
