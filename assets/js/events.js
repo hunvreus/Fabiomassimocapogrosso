@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  const itemsPerPage = 3;
+  let allUpcomingEvents = [];
+  let allPastEventsByYear = {};
+  let currentUpcomingIndex = 0;
+  let currentPastIndex = 0;
+  let pastYearsToShow = [];
+  let allPastEventsFlat = [];
+  let pastEventsTitleShown = {};
+
   fetch("/events.json")
     .then(res => res.json())
     .then(data => {
@@ -33,32 +42,128 @@ document.addEventListener("DOMContentLoaded", () => {
         pastEventsByYear[year].sort((a, b) => new Date(b.date) - new Date(a.date));
       });
 
-      // Aggiungi eventi futuri
-      if (upcomingEvents.length > 0) {
-        const upcomingTitle = document.createElement("div");
-        upcomingTitle.className = "container section-title";
-        upcomingTitle.innerHTML = "<h2>Upcoming Events</h2>";
-        container.appendChild(upcomingTitle);
+      allUpcomingEvents = upcomingEvents;
+      allPastEventsByYear = pastEventsByYear;
+      pastYearsToShow = Object.keys(pastEventsByYear).sort().reverse();
 
-        upcomingEvents.forEach(event => {
-          container.appendChild(createEventRow(event));
-        });
-      }
-
-      // Aggiungi eventi passati per anno (decrescente)
-      const years = Object.keys(pastEventsByYear).sort().reverse();
-      years.forEach(year => {
-        const yearTitle = document.createElement("div");
-        yearTitle.className = "container section-title";
-        yearTitle.innerHTML = `<h2 class="event-year">${year}</h2>`;
-        container.appendChild(yearTitle);
-
+      // Crea un array piatto di tutti gli eventi passati con i dati dell'anno
+      pastYearsToShow.forEach(year => {
         pastEventsByYear[year].forEach(event => {
-          container.appendChild(createEventRow(event));
+          allPastEventsFlat.push({
+            ...event,
+            year: year
+          });
         });
       });
+
+      // Carica i primi eventi
+      loadMoreUpcomingEvents();
+
+      // Se ci sono eventi passati, carica i primi
+      if (allPastEventsFlat.length > 0) {
+        loadMorePastEvents();
+      }
     })
     .catch(err => console.error("Errore caricando gli eventi:", err));
+
+  function loadMoreUpcomingEvents() {
+    const eventsToAdd = allUpcomingEvents.slice(currentUpcomingIndex, currentUpcomingIndex + itemsPerPage);
+
+    // Aggiungi il titolo "Upcoming Events" solo la prima volta
+    if (currentUpcomingIndex === 0 && eventsToAdd.length > 0) {
+      const upcomingTitle = document.createElement("div");
+      upcomingTitle.className = "container section-title";
+      upcomingTitle.innerHTML = "<h2>Upcoming Events</h2>";
+      container.appendChild(upcomingTitle);
+    }
+
+    eventsToAdd.forEach(event => {
+      container.appendChild(createEventRow(event));
+    });
+
+    currentUpcomingIndex += itemsPerPage;
+
+    // Se ci sono altri eventi futuri, aggiungi il load more e ricrea il bottone
+    if (currentUpcomingIndex < allUpcomingEvents.length) {
+      addLoadMoreButtonUpcoming();
+    }
+  }
+
+  function loadMorePastEvents() {
+    const eventsToAdd = allPastEventsFlat.slice(currentPastIndex, currentPastIndex + itemsPerPage);
+
+    eventsToAdd.forEach(event => {
+      // Aggiungi il titolo dell'anno solo la prima volta che appare
+      if (!pastEventsTitleShown[event.year]) {
+        const yearTitle = document.createElement("div");
+        yearTitle.className = "container section-title";
+        yearTitle.innerHTML = `<h2 class="event-year">${event.year}</h2>`;
+        container.appendChild(yearTitle);
+        pastEventsTitleShown[event.year] = true;
+      }
+
+      container.appendChild(createEventRow(event));
+    });
+
+    currentPastIndex += itemsPerPage;
+
+    // Se ci sono altri eventi passati, aggiungi il load more
+    if (currentPastIndex < allPastEventsFlat.length) {
+      addLoadMoreButtonPast();
+    }
+  }
+
+  function addLoadMoreButtonUpcoming() {
+    const oldBtn = document.getElementById("load-more-btn");
+    if (oldBtn) oldBtn.remove();
+
+    const loadMoreBtn = document.createElement("button");
+    loadMoreBtn.id = "load-more-btn";
+    loadMoreBtn.className = "load-more-btn";
+    
+    loadMoreBtn.innerHTML = `
+      <i class="fa-solid fa-chevron-down"></i>
+      <span class="load-more-text">More</span>
+    `;
+
+    loadMoreBtn.addEventListener("click", () => {
+      loadMoreUpcomingEvents();
+
+      if (currentUpcomingIndex >= allUpcomingEvents.length) {
+        loadMoreBtn.remove();
+      } else {
+        addLoadMoreButtonUpcoming();
+      }
+    });
+
+    container.appendChild(loadMoreBtn);
+  }
+
+  function addLoadMoreButtonPast() {
+    const oldBtn = document.getElementById("load-more-btn");
+    if (oldBtn) oldBtn.remove();
+
+    const loadMoreBtn = document.createElement("button");
+    loadMoreBtn.id = "load-more-btn";
+    loadMoreBtn.className = "load-more-btn";
+    
+    loadMoreBtn.innerHTML = `
+      <i class="fa-solid fa-chevron-down"></i>
+      <span class="load-more-text">Load More</span>
+    `;
+
+    loadMoreBtn.addEventListener("click", () => {
+      loadMorePastEvents();
+
+      if (currentPastIndex >= allPastEventsFlat.length) {
+        loadMoreBtn.remove();
+      } else {
+        addLoadMoreButtonPast();
+      }
+    });
+
+    container.appendChild(loadMoreBtn);
+  }
 });
 
 function createEventRow(event) {
