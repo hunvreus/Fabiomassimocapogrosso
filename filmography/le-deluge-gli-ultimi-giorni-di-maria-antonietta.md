@@ -21,5 +21,9 @@ synopsis: >-
   3) I morti: segna l'inevitabile conclusione, con l'accettazione del destino
   che li attende.
 trailer_url: https://www.youtube.com/watch?v=_ePq157LzEQ
-spotify_key: a
+spotify_key: <iframe data-testid="embed-iframe" style="border-radius:12px"
+  src="https://open.spotify.com/embed/album/510bQUbqUisyK69zXwedVl?utm_source=generator&theme=0"
+  width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay;
+  clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy"></iframe>
 ---
