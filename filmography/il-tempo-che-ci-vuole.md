@@ -22,7 +22,7 @@ synopsis: >-
   girare film autobiografici, concentrati su vicende personali, le augura il
   successo ma le annuncia che non andrà a vedere questo film, salvo lasciarsi
   prendere dalla commozione quando vedrà Francesca in tv ritirare il premio
-  all'opera prima.[
+  all'opera prima.
 trailer_url: https://www.youtube.com/watch?v=mci8pjLvq_w
 spotify_key: <iframe data-testid="embed-iframe" style="border-radius:12px"
   src="https://open.spotify.com/embed/album/5UiH6AX4ttv8JwzsmeO40d?utm_source=generator&theme=0"
