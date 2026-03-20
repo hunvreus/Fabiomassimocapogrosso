@@ -1,7 +1,7 @@
 ---
 title: "Le Déluge: Gli ultimi giorni di Maria Antonietta"
 director: Gianluca Jodice
-year: 2024
+date: 2024-11-21
 poster: /assets/news/ledeluge2.jpg
 synopsis: >-
   Il film segue i giorni di prigionia di Luigi XVI e Maria Antonietta e della
