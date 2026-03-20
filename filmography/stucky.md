@@ -1,7 +1,7 @@
 ---
 title: Stucky
 director: Valerio Attanasio
-year: 2024
+date: 2024-10-28
 poster: /assets/news/1729692129301_2048x1152_logo.jpg
 synopsis: Di origini italo-persiane, sornione e flemmatico, l'ispettore Stucky
   si appoggia alla Questura di Treviso muovendosi a proprio agio tra le vie
