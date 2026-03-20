@@ -795,7 +795,7 @@ body.scrolled .header{
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--default-color);
+  background-image: linear-gradient(to bottom, #6E310F, black);
   transition: all 0.6s ease-out;
 }
 
@@ -3791,16 +3791,20 @@ tbody, td, tfoot, th, thead, tr {
   }
 }
 
-  #hero .BS{
-    font-family: "Oranienbaum", Georgia, "Times New Roman", Times, serif;
-  }
+#hero .BS{
+  font-family: "Oranienbaum", Georgia, "Times New Roman", Times, serif;
+}
 
-    #speakers .container-film{
-    padding: 0!important;
-  }
+  #speakers .container-film{
+  padding: 0!important;
+}
 
-  .container-film{
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
-  }
+.container-film{
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.film-content{
+padding: 10px;
+}
