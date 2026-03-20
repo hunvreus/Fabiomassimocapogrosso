@@ -17,7 +17,8 @@ fs.readdirSync(absoluteDir).forEach(file => {
       name: data.name || '',
       instrumentation: data.instrumentation || '',
       composition_type: data.composition_type || '',
-      premiere_date: data.premiere_date || ''
+      premiere_date: data.premiere_date || '',
+      url: data.url || ''
     });
   }
 });
