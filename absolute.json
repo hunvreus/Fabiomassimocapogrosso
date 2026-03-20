@@ -3,84 +3,98 @@
     "name": "Residenza Oblio",
     "instrumentation": "For violin and string orchestra",
     "composition_type": "Symphonic",
-    "premiere_date": "2026-03-03T00:00:00.000Z"
+    "premiere_date": "2026-03-03T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Esterno Notte",
     "instrumentation": "Orchestra",
     "composition_type": "Movie",
-    "premiere_date": "2022-01-11T00:00:00.000Z"
+    "premiere_date": "2022-01-11T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Altri Volti",
     "instrumentation": "Orchestra",
     "composition_type": "Symphonic",
-    "premiere_date": "2020-05-15T00:00:00.000Z"
+    "premiere_date": "2020-05-15T00:00:00.000Z",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "name": "From Subconcious",
     "instrumentation": "Orchestra",
     "composition_type": "Symphonic",
-    "premiere_date": "2020-03-12T00:00:00.000Z"
+    "premiere_date": "2020-03-12T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Beyond The Limit",
     "instrumentation": "Orchestra",
     "composition_type": "Symphonic",
-    "premiere_date": "2020-02-07T00:00:00.000Z"
+    "premiere_date": "2020-02-07T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Tre Sogni",
     "instrumentation": "For Ensemble",
     "composition_type": "Chamber",
-    "premiere_date": "2019-10-17T00:00:00.000Z"
+    "premiere_date": "2019-10-17T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Sortlège",
     "instrumentation": "For Piano and dancer",
     "composition_type": "Chamber",
-    "premiere_date": "2019-05-09T00:00:00.000Z"
+    "premiere_date": "2019-05-09T00:00:00.000Z",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "name": "Città Nascoste",
     "instrumentation": "Orchestra",
     "composition_type": "Symphonic",
-    "premiere_date": "2019-03-19T00:00:00.000Z"
+    "premiere_date": "2019-03-19T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Alchimie",
     "instrumentation": "For clarinet and percussion",
     "composition_type": "Chamber",
-    "premiere_date": "2019-03-07T00:00:00.000Z"
+    "premiere_date": "2019-03-07T00:00:00.000Z",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "name": "Quasi un Valzer",
     "instrumentation": "For Piano",
     "composition_type": "Chamber",
-    "premiere_date": "2018-06-12T00:00:00.000Z"
+    "premiere_date": "2018-06-12T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Due Sogni",
     "instrumentation": "For Ensemble",
     "composition_type": "Chamber",
-    "premiere_date": "2018-05-01T00:00:00.000Z"
+    "premiere_date": "2018-05-01T00:00:00.000Z",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "name": "Il Compleanno di Mary",
     "instrumentation": "",
     "composition_type": "Theatre",
-    "premiere_date": "2015-05-20T00:00:00.000Z"
+    "premiere_date": "2015-05-20T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Le avventure di COstante",
     "instrumentation": "",
     "composition_type": "Theatre",
-    "premiere_date": "2011-03-30T00:00:00.000Z"
+    "premiere_date": "2011-03-30T00:00:00.000Z",
+    "url": ""
   },
   {
     "name": "Vivid",
     "instrumentation": "For three recorders",
     "composition_type": "Chamber",
-    "premiere_date": "1918-11-01T00:00:00.000Z"
+    "premiere_date": "1918-11-01T00:00:00.000Z",
+    "url": ""
   }
 ]
