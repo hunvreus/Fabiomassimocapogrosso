@@ -9,6 +9,15 @@
     "spotify_key": "<iframe data-testid=\"embed-iframe\" style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/album/4Ok6IcBazCpkVYpb90zpru?utm_source=generator&theme=0\" width=\"100%\" height=\"352\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>"
   },
   {
+    "title": "Le Déluge: Gli ultimi giorni di Maria Antonietta",
+    "director": "Gianluca Jodice",
+    "date": "2024-11-21T00:00:00.000Z",
+    "poster": "/assets/news/ledeluge2.jpg",
+    "synopsis": "Il film segue i giorni di prigionia di Luigi XVI e Maria Antonietta e della loro famiglia alla Tour du Temple prima dell’esecuzione del sovrano, mostrando le complesse vicende umane e storiche che hanno accompagnato questo periodo.\n\nIl film è suddiviso in tre capitoli, ciascuno con un titolo emblematico:\n1) Gli dei: rappresenta la fase in cui i sovrani vivono ancora nella loro dimensione regale, apparentemente ignari della rivoluzione in atto.\n2) Gli uomini: mostra il momento in cui Luigi XVI e Maria Antonietta iniziano a confrontarsi con la realtà della loro caduta e cercano di adattarsi alla nuova condizione.\n3) I morti: segna l'inevitabile conclusione, con l'accettazione del destino che li attende.",
+    "trailer_url": "https://www.youtube.com/watch?v=_ePq157LzEQ",
+    "spotify_key": "<iframe data-testid=\"embed-iframe\" style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/album/510bQUbqUisyK69zXwedVl?utm_source=generator&theme=0\" width=\"100%\" height=\"352\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>"
+  },
+  {
     "title": "Il tempo che ci vuole",
     "director": "Francesca Comencini",
     "date": "2024-09-26T00:00:00.000Z",
@@ -25,15 +34,6 @@
     "synopsis": "1978, uno tra i più tormentati anni della storia del nostro Paese, tra violenza di piazza, rapimenti, gambizzazioni, scontri a fuoco, attentati. È anche l'anno del rapimento e dell’omicidio del presidente della Democrazia Cristiana, Aldo Moro, da parte delle Brigate Rosse, l’organizzazione terroristica italiana di estrema sinistra costituitasi nel 1970 per propagandare e sviluppare la lotta armata rivoluzionaria per il comunismo. Nel 1978 stava per insediarsi, per la prima volta in un paese occidentale, un governo sostenuto dal Partito Comunista (PCI), in una storica alleanza con la Democrazia Cristiana. Proprio Moro è stato il principale fautore di questo accordo, che ha segnato un passo decisivo verso il partito guidato da Enrico Berlinguer.",
     "trailer_url": "https://www.youtube.com/watch?v=zBL0Pd-NbfQ",
     "spotify_key": "<iframe data-testid=\"embed-iframe\" style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/album/07cdXF0667emjzIj1ezT67?utm_source=generator&theme=0\" width=\"100%\" height=\"352\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>"
-  },
-  {
-    "title": "Le Déluge: Gli ultimi giorni di Maria Antonietta",
-    "director": "Gianluca Jodice",
-    "date": "",
-    "poster": "/assets/news/ledeluge2.jpg",
-    "synopsis": "Il film segue i giorni di prigionia di Luigi XVI e Maria Antonietta e della loro famiglia alla Tour du Temple prima dell’esecuzione del sovrano, mostrando le complesse vicende umane e storiche che hanno accompagnato questo periodo.\n\nIl film è suddiviso in tre capitoli, ciascuno con un titolo emblematico:\n1) Gli dei: rappresenta la fase in cui i sovrani vivono ancora nella loro dimensione regale, apparentemente ignari della rivoluzione in atto.\n2) Gli uomini: mostra il momento in cui Luigi XVI e Maria Antonietta iniziano a confrontarsi con la realtà della loro caduta e cercano di adattarsi alla nuova condizione.\n3) I morti: segna l'inevitabile conclusione, con l'accettazione del destino che li attende.",
-    "trailer_url": "https://www.youtube.com/watch?v=_ePq157LzEQ",
-    "spotify_key": "<iframe data-testid=\"embed-iframe\" style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/album/510bQUbqUisyK69zXwedVl?utm_source=generator&theme=0\" width=\"100%\" height=\"352\" frameBorder=\"0\" allowfullscreen=\"\" allow=\"autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture\" loading=\"lazy\"></iframe>"
   },
   {
     "title": "Primavera",
