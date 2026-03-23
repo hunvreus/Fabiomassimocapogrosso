@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const biographyFile = path.join(__dirname, 'biography', 'Biografia.md');
+const biographyFile = path.join(__dirname, 'biography');
 const outputFile = path.join(__dirname, 'biography.json');
 
 const content = fs.readFileSync(biographyFile, 'utf8');
