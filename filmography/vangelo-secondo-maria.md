@@ -1,7 +1,7 @@
 ---
 title: Vangelo Secondo Maria
 director: Paolo Zucca
-date: 2023-11-23
+date: 2023-01-23
 poster: /assets/news/VANGELO SITO.jpg
 synopsis: "Maria è una ragazzina di Nazareth. Come donna tutto le è proibito,
   anche imparare a leggere e scrivere. Ma lei sogna libertà e sapienza. Alla
