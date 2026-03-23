@@ -1,10 +1,10 @@
-name: Aggiorna News
+name: Aggiorna Biography
 
 on:
-  push:            # si attiva su ogni push
+  push:
     paths:
-      - 'biography/**'  # solo se cambia qualcosa nella cartella news/
-  workflow_dispatch:  # trigger manuale
+      - 'biography' 
+  workflow_dispatch:
 
 jobs:
   generate-biography:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false  # importante per usare PAT
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
