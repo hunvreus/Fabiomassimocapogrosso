@@ -122,7 +122,7 @@ content:
     type: collection
     create: true
     view:
-      fields: [title, director, year]
+      fields: [title, director, date]
     fields:
       - name: title
         label: Titolo
@@ -162,27 +162,27 @@ content:
     type: file
     fields:
       - name: title1
-        label: Titolo1
+        label: Titolo 1
         type: text
 
       - name: subtitle1
-        label: Sotto-titolo1
+        label: Paragrafo 1 (inserire <br> per andare a capo)
         type: text
 
       - name: img1
-        label: Immagine1
+        label: Immagine 1
         type: image
 
       - name: title2
-        label: Titolo2
+        label: Titolo 2
         type: text
 
       - name: subtitle2
-        label: Sotto-titolo2
+        label: Paragrafo 2 (inserire <br> per andare a capo)
         type: text
 
       - name: img2
-        label: Immagine2
+        label: Immagine2 
         type: image
 
 

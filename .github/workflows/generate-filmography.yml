@@ -7,7 +7,7 @@ on:
   workflow_dispatch:  # trigger manuale
 
 jobs:
-  generate-news:
+  generate-filmography:
     runs-on: ubuntu-latest
 
     steps:

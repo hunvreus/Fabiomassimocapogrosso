@@ -3,11 +3,11 @@ name: Aggiorna News
 on:
   push:            # si attiva su ogni push
     paths:
-      - 'events/**'  # solo se cambia qualcosa nella cartella news/
+      - 'biography/**'  # solo se cambia qualcosa nella cartella news/
   workflow_dispatch:  # trigger manuale
 
 jobs:
-  generate-events:
+  generate-biography:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,13 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install gray-matter
 
-      - name: Generate events.json
-        run: node generate-events.js
+      - name: Generate biography.json
+        run: node generate-biography.js
 
       - name: Commit & Push changes
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add events.json
-          git diff --cached --quiet || git commit -m "Aggiornamento automatico events"
+          git add biography.json
+          git diff --cached --quiet || git commit -m "Aggiornamento automatico biography"
           git push https://erpiumino:${{ secrets.PAT }}@github.com/erpiumino/Fabiomassimocapogrosso.git HEAD:main

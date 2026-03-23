@@ -1,0 +1,22 @@
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
+
+const biographyFile = path.join(__dirname, 'biography', 'Biografia.md');
+const outputFile = path.join(__dirname, 'biography.json');
+
+const content = fs.readFileSync(biographyFile, 'utf8');
+const { data } = matter(content);
+
+const biography = {
+  title1: data.title1 || '',
+  subtitle1: data.subtitle1 || '',
+  img1: data.img1 || '',
+  title2: data.title2 || '',
+  subtitle2: data.subtitle2 || '',
+  img2: data.img2 || '',
+};
+
+fs.writeFileSync(outputFile, JSON.stringify(biography, null, 2));
+
+console.log(`Biography JSON generato in ${outputFile}`);
