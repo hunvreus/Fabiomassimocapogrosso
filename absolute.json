@@ -54,5 +54,12 @@
     "composition_type": "Symphonic",
     "premiere_date": "2019-03-25T00:00:00.000Z",
     "url": ""
+  },
+  {
+    "name": "VIVID",
+    "instrumentation": "For consort trio",
+    "composition_type": "Chamber",
+    "premiere_date": "2018-11-01T00:00:00.000Z",
+    "url": ""
   }
 ]
