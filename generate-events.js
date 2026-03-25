@@ -12,6 +12,7 @@ fs.readdirSync(eventsDir).forEach(file => {
     const filePath = path.join(eventsDir, file);
     const content = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(content);
+    
     events.push({
       date: data.date || '',
       title: data.title || '',

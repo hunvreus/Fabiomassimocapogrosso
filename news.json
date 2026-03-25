@@ -4,7 +4,7 @@
     "title": "PRIMAVERA",
     "subtitle": "recensione per colonne sonore.net",
     "url": "https://www.colonnesonore.net/recensioni/cinema/11391-primavera.html",
-    "cover": "/assets/news/primavera.jpg",
+    "cover": "assets/news/primavera.jpg",
     "size": "small"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Fabio Massimo Capogrosso, un’epica contemporanea",
     "subtitle": "INTERVISTA Il compositore italiano racconta il suo lavoro e il passaggio dalla musica «assoluta» a quella scritta per il cinema",
     "url": "https://ilmanifesto.it/fabio-massimo-capogrosso-unepica-contemporanea",
-    "cover": "/assets/news/23pg03af01.jpg.avif",
+    "cover": "assets/news/23pg03af01.jpg.avif",
     "size": "medium"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Fabio Massimo Capogrosso",
     "subtitle": "Da Marco Bellocchio a Primavera, la storia di un compositore che nel cinema ha trovato la libertà",
     "url": "https://www.comingsoon.it/cinema/news/fabio-massimo-capogrosso-da-marco-bellocchio-a-primavera-la-storia-di-un/n205317/",
-    "cover": "/assets/news/205317_ppl.jpg",
+    "cover": "assets/news/205317_ppl.jpg",
     "size": "large"
   },
   {
@@ -28,7 +28,7 @@
     "title": "La colonna sonora di \"Le Déluge\" di Fabio Massimo Capogrosso per Plaza Mayor Company",
     "subtitle": "",
     "url": "https://www.colonnesonore.net/news/novita-discografiche/10405-la-colonna-sonora-di-le-deluge-di-fabio-massimo-capogrosso-per-plaza-mayor-company.html",
-    "cover": "/assets/news/foto_fabio_massimo_capogrosso_le_deluge-1.jpg",
+    "cover": "assets/news/foto_fabio_massimo_capogrosso_le_deluge-1.jpg",
     "size": "medium"
   },
   {
@@ -36,7 +36,7 @@
     "title": "ESTERNO NOTTE",
     "subtitle": "La colonna sonora di Fabio Massimo Capogrosso candidata ai premi David di Donatello",
     "url": "https://www.raicultura.it/cinema/articoli/2023/03/David-di-Donatello-2023-le-nomination-ec55746f-fd3a-4b0d-8526-96c511e90c0f.html",
-    "cover": "/assets/news/Esterno notte locandina.jpg",
+    "cover": "assets/news/Esterno notte locandina.jpg",
     "size": "small"
   }
 ]

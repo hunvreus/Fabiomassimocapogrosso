@@ -14,12 +14,15 @@ fs.readdirSync(newsDir).forEach(file => {
     const content = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(content);
 
+    // Rimuove lo slash iniziale dai path delle immagini
+    const fixPath = (p) => (typeof p === 'string' ? p.replace(/^\//, '') : p);
+
     news.push({
       date: data.date || '',
       title: data.title || '',
       subtitle: data.subtitle || '',
       url: data.url || '',
-      cover: data.cover || '',
+      cover: fixPath(data.cover || ''),
       size: data.size && typeof data.size === 'object' ? data.size.value : data.size || 'medium'
     });
   }

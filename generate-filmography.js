@@ -11,11 +11,14 @@ fs.readdirSync(filmographyDir).forEach(file => {
     const filePath = path.join(filmographyDir, file);
     const content = fs.readFileSync(filePath, 'utf8');
     const { data } = matter(content);
+
+    const fixPath = (p) => (typeof p === 'string' ? p.replace(/^\//, '') : p);
+
     films.push({
       title: data.title || '',
       director: data.director || '',
       date: data.date || '',
-      poster: data.poster || '',
+      poster: fixPath(data.poster || ''),
       synopsis: data.synopsis || '',
       trailer_url: data.trailer_url || '',
       spotify_key: data.spotify_key || ''
