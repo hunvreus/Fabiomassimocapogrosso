@@ -145,7 +145,7 @@ content:
 
       - name: synopsis
         label: Sinossi
-        type: text
+        type: rich-text
 
       - name: trailer_url
         label: Link trailer YouTube
